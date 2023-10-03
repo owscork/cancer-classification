@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://images.vexels.com/media/users/3/316791/isolated/preview/7bd957a2f9ffe91e3b0d00609200041a-goose-holding-a-baseball-bat.png" alt="Logo" width="120" height="120">
+    <img src="./new-ctype2.png" alt="Logo" height="180">
   </a>
 
   <h3 align="center">Cancer Type Classification</h3>
