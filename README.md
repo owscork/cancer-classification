@@ -16,7 +16,7 @@
   </p>
 </div>
 
-Table of Contents:
+## Table of Contents:
 
 - [Built with](#built-with)
 - [Project Summary](#summary)
