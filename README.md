@@ -16,7 +16,15 @@
   </p>
 </div>
 
-<h1 align="center">  Machine Learning Classification Models </h1>
+Table of Contents:
+
+- [Built with](#built-with)
+- [Project Summary](#summary)
+- [Data](#data)
+- [Models](#models)
+  - [k-nearest-neighbors](#k-nearest-neighbors)
+  - [neural network](#neural-network)
+
 
 ## Built With
 
@@ -27,7 +35,7 @@
 ![Numpy][Numpy.ico]
 
 
-## About the Project
+## Summary
 Using a large dataset containing patients' miRNA profiles that have been diagnosed with one of six cancer types, built and trained
 two machine learning models to classify the type of cancer present given the miRNA profile. Utilized the k-nearest-neighbor model and 
 neural network for the models, finding the neural network to produce better results.
@@ -46,6 +54,14 @@ The data provided consisted of six folders of roughly 100 patient profiles each.
 | hsa-let-7b | 55451 | 15312.435710 | N |
 | hsa-let-7a-3 | 108895 | 16407.068722 | Y |
 ...
+
+
+## Models
+
+#### k-nearest-neighbors
+
+#### neural network
+
 
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
