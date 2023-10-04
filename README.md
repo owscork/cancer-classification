@@ -5,7 +5,7 @@
     <img src="./new-ctype2.png" alt="Logo" height="180">
   </a>
 
-  <h3 align="center">Cancer Type Classification</h3>
+  <h1 align="center">Cancer Type Classification</h1>
 
   <p align="center">
     Built and tested two machine learning models to classify the cancer type given a patient's miRNA profile
