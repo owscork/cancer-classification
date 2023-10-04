@@ -16,12 +16,6 @@
   </p>
 </div>
 
-## About the Project
-Using a large dataset containing patients' miRNA profiles that have been diagnosed with one of six cancer types, built and trained
-two machine learning models to classify the type of cancer present given the miRNA profile. Utilized the k-nearest-neighbor model and 
-neural network for the models, finding the neural network to produce better results.
-
-
 ## Built With
 
 ![Python][Python.ico]
@@ -29,6 +23,12 @@ neural network for the models, finding the neural network to produce better resu
 ![TF][TF.ico]
 ![SciKit][SciKit.ico]
 ![Numpy][Numpy.ico]
+
+
+## About the Project
+Using a large dataset containing patients' miRNA profiles that have been diagnosed with one of six cancer types, built and trained
+two machine learning models to classify the type of cancer present given the miRNA profile. Utilized the k-nearest-neighbor model and 
+neural network for the models, finding the neural network to produce better results.
 
 
 ## Data
