@@ -16,7 +16,7 @@
   </p>
 </div>
 
-<h2 align="center"> Classification Models [ k-nearest-neighbors + neural network] </h2>
+<h1 align="center">  Machine Learning Classification Models </h1>
 
 ## Built With
 
