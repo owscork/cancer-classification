@@ -22,9 +22,10 @@
 - [About the Project](#about-the-project)
 - [Data](#data)
   + [Sample miRNA Profile Snippet](#sample-mirna-profile-snippet)
+- [Pre-processing Data](#pre-processing-data)
 - [Models](#models)
-  + [k-nearest-neighbors](#k-nearest-neighbors)
-  + [neural network](#neural-network)
+  + [k-Nearest-Neighbors](#k-nearest-neighbors)
+  + [Neural Network](#neural-network)
 
 
 ## Built With
@@ -58,15 +59,9 @@ The data provided consisted of six folders of roughly 100 patient profiles each.
 ...
 
 
-## Models
-
-### k-nearest-neighbors
+## Pre-processing Data
 
 ```py
-
-# Using Tensorflow Keras for KNN model
-# Just feed dataframe of miRNA profiles into model to train and make predictions
-
 cancer_data = pd.concat(df)
 
 Y = cancer_data['Class']
@@ -75,6 +70,19 @@ min_max_scaler = preprocessing.MinMaxScaler()
 x_scaled = min_max_scaler.fit_transform(X)
 X = pd.DataFrame(x_scaled)
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.68,random_state=1)
+```
+
+
+
+## Models
+
+
+### k-Nearest-Neighbors
+
+```py
+
+# Using Tensorflow Keras for KNN model
+# Just feed dataframe of miRNA profiles into model to train and make predictions
 
 model = KNeighborsClassifier(n_neighbors=26)
 
@@ -84,9 +92,31 @@ y_pred = model.predict(X_test)
 
 ```
 
-### neural network
+### Neural Network
 
 ```py
+
+# Again using Tensorflow Keras for neural network model
+
+c_network = Sequential()
+c_network.add(Flatten(input_shape=(n_features, )))
+c_network.add(Dense(80, activation="relu"))
+c_network.add(Dense(15, activation="relu"))
+c_network.add(Dense(6, activation="softmax"))
+
+c_network.compile(optimizer='adam',
+                  loss='categorical_crossentropy',
+                  metrics=['accuracy'])
+
+history = c_network.fit(X_train,
+                        Y_train,
+                        epochs=80,
+                        batch_size=33,
+                        validation_split=0.23)
+
+hist_df = pd.DataFrame(history.history)
+
+pred = c_network.predict(X_test)
 
 ```
 
