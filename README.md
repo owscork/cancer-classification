@@ -19,11 +19,12 @@
 ## Table of Contents:
 
 - [Built with](#built-with)
-- [Project Summary](#summary)
+- [About the Project](#about-the-project)
 - [Data](#data)
+  + [Sample miRNA Profile Snippet](#sample-mirna-profile-snippet)
 - [Models](#models)
-  - [k-nearest-neighbors](#k-nearest-neighbors)
-  - [neural network](#neural-network)
+  + [k-nearest-neighbors](#k-nearest-neighbors)
+  + [neural network](#neural-network)
 
 
 ## Built With
@@ -35,7 +36,7 @@
 ![Numpy][Numpy.ico]
 
 
-## Summary
+## About the Project
 Using a large dataset containing patients' miRNA profiles that have been diagnosed with one of six cancer types, built and trained
 two machine learning models to classify the type of cancer present given the miRNA profile. Utilized the k-nearest-neighbor model and 
 neural network for the models, finding the neural network to produce better results.
@@ -45,6 +46,7 @@ neural network for the models, finding the neural network to produce better resu
 The data provided consisted of six folders of roughly 100 patient profiles each. Folders were organized by cancer type, so all patients within a folder shared the type of cancer present, leaving a total of six different cancer types to classify from.
 <br />
 
+### Sample miRNA Profile Snippet
 
 |miRNA_ID|read_count|reads_per_million_miRNA_mapped|cross-mapped|
 | --- | --- | --- | --- |
@@ -58,10 +60,35 @@ The data provided consisted of six folders of roughly 100 patient profiles each.
 
 ## Models
 
-#### k-nearest-neighbors
+### k-nearest-neighbors
 
-#### neural network
+```py
 
+# Using Tensorflow Keras for KNN model
+# Just feed dataframe of miRNA profiles into model to train and make predictions
+
+cancer_data = pd.concat(df)
+
+Y = cancer_data['Class']
+X = cancer_data.drop('Class', axis=1)
+min_max_scaler = preprocessing.MinMaxScaler()
+x_scaled = min_max_scaler.fit_transform(X)
+X = pd.DataFrame(x_scaled)
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.68,random_state=1)
+
+model = KNeighborsClassifier(n_neighbors=26)
+
+model.fit(X_train, Y_train)
+
+y_pred = model.predict(X_test)
+
+```
+
+### neural network
+
+```py
+
+```
 
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
