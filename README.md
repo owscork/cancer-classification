@@ -108,7 +108,7 @@ Following the preprocessing of the data, two classification models were created 
 
 ### k-Nearest-Neighbors
 
-```pyy
+```py
 
 # Using Tensorflow Keras for KNN model
 # Just feed dataframe of miRNA profiles into model to train and make predictions
