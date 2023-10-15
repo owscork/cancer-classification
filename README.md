@@ -61,6 +61,34 @@ The data provided consisted of six folders of roughly 100 patient profiles each.
 
 ## Pre-processing Data
 
+### Build Dataframe
+
+```py
+
+df = []
+
+data_dir = os.path.join(os.getcwd(), "data")
+bad_files = ['MANIFEST.txt', 'annotations.txt', '.DS_Store']
+for root, dirs, files in os.walk(data_dir):
+    path = os.path.dirname(root)
+    p = os.path.basename(path)
+    for file in files:
+        if file in bad_files:
+            continue
+        else:
+            if ".txt" in file:
+                pathToFile = os.path.join(root, file)
+                mRNA_profile = pd.read_csv(pathToFile, sep="\t")
+                x = pd.pivot_table(mRNA_profile,
+                                   values='reads_per_million_miRNA_mapped',
+                                   columns=['miRNA_ID'])
+                x["Class"] = p
+                df.append(x)
+
+```
+
+### Normalize + Test/Train Split Data
+
 ```py
 cancer_data = pd.concat(df)
 
@@ -76,10 +104,11 @@ X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.68,random_st
 
 ## Models
 
+Following the preprocessing of the data, two classification models were created in python, utilizing TensorFlow's prebuilt models for K-Nearest-Neighbors and Neural Networks. The training data gets fed into both to train and fit the models, and predicitions are generated using the testing data so guesses can be checked for accuracy.
 
 ### k-Nearest-Neighbors
 
-```py
+```pyy
 
 # Using Tensorflow Keras for KNN model
 # Just feed dataframe of miRNA profiles into model to train and make predictions
