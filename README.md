@@ -5,10 +5,10 @@
     <img src="./new-ctype2.png" alt="Logo" height="180">
   </a>
 
-  <h1 align="center">Cancer Type Classification</h1>
+  <h1 align="center">Classifying Cancer Type w/ Machine Learning</h1>
 
   <p align="center">
-    Built and tested two machine learning models to classify the cancer type given a patient's miRNA profile
+    Built, trained, and tested classification models to predict the cancer type for a given patient's miRNA profile
     <br />
     <a href="https://github.com/owscork/cancer-classification"><strong>Explore the docs »</strong></a>
     <br />
@@ -38,17 +38,16 @@
 
 
 ## About the Project
-Using a large dataset containing patients' miRNA profiles that have been diagnosed with one of six cancer types, built and trained
-two machine learning models to classify the type of cancer present given the miRNA profile. Utilized the k-nearest-neighbor model and 
-neural network for the models, finding the neural network to produce better results.
 
+Utilizing the TensorFlow Keras library, two classification models were created to predict the type of cancer present given the patient's miRNA profile. The models were trained on a provided dataset consisting of hundreds of patients' miRNA profiles and the corresponding cancer type found. Six types of cancer are covered in the dataset, so the models are only capable of predicting between those six types, which is why classification models are necessary for this project's purpose.
 
 ## Data
-The data provided consisted of six folders of roughly 100 patient profiles each. Folders were organized by cancer type, so all patients within a folder shared the type of cancer present, leaving a total of six different cancer types to classify from.
-<br />
+
+The data provided consisted of six folders of roughly 100 patient profiles each. Folders were organized by cancer type, so all patients within a folder shared the same type. The contents of a patient profile comprised of almost 2000 miRNA markers, otherwise referred to as features, with values recorded for each representing the amount that feature was expressed in the patient's tissue.
 
 ### Sample miRNA Profile Snippet
 
+Below is an example of a miRNA profile provided in the data:
 |miRNA_ID|read_count|reads_per_million_miRNA_mapped|cross-mapped|
 | --- | --- | --- | --- |
 | hsa-let-7a-1 | 108872 | 30064.300024 | N |
@@ -58,6 +57,7 @@ The data provided consisted of six folders of roughly 100 patient profiles each.
 | hsa-let-7a-3 | 108895 | 16407.068722 | Y |
 ...
 
+The miRNA_ID column indicates the names of the miRNA markers or features measured in a patient's tissue. The reads_per_million_miRNA_mapped column provides a normalized value for each feature representing the level it was expressed in the tissue. 
 
 ## Pre-processing Data
 
